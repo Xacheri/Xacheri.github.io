@@ -1,0 +1,242 @@
+/* Apply Font to All */
+    * {
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+    }   
+
+body {
+    background-color: #4469a8;
+}
+
+#NameBoyScreen {
+    position: absolute;
+    margin-top: 0.5rem;
+    height: 460px;
+    width: 337px;
+    background-color: #404040; /* Apparently screens like near-black better */
+}
+
+
+/* the page ids and carousel-inner inherit h/w to keep the pages a standard size for abs positioning*/
+
+    .carousel-item{
+        height: inherit;
+        width: inherit;
+    }
+
+    .carousel-inner {
+        height: inherit;
+        width: inherit;
+    }
+
+
+/* Home Screen */
+    #homeScreen > h2 {
+        color: #FDFF00;
+        margin-top: 10px;
+    }
+
+    #homeScreen > h3 {
+        font-size: 16px;
+    }
+
+    ul {
+        font-size: 12px;
+    }
+
+    #stardewAvatar {
+        width: 120px;
+        height: 171px;
+        margin: 10px;
+    }
+/* Goals Screen */
+    #goalsScreen > h2 {
+        color: #EA82E5;
+        margin-top: 10px;
+    }
+
+    #goalsScreen > h3 {
+        font-size: 16px;
+        text-decoration: underline;
+        margin: 1rem;
+    }
+
+    #learn {
+        color: #46BFEE;
+    }
+
+    #build {
+        color: #D03E19;
+    }
+
+    #play {
+        color: #DB851C;
+    }
+
+/* Education Screen */
+    #educationScreen > h2 {
+        color: #48FB00;
+        margin-top: 10px;
+    }
+
+    #educationScreen > h3 {
+        font-size: 16px;
+        margin: 1rem;
+    }
+
+    .edItem {
+        margin-bottom: 0.5rem;
+    }
+
+/* For Fun Screen */
+    #pleaseh2 {
+        color: #FDFF00;
+        margin-top: 10px;
+    }
+
+    form > input {
+        color: #000;
+    }
+
+    #submit {
+        margin: 2rem;
+        color: #000;
+    }
+
+/* General Screen Classes */
+
+    p {
+        margin: 10px;
+        text-indent: 1rem;
+        font-size: 10px;
+    }
+
+    .navhint {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .navhintReverse {
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+    }
+
+
+/* NameBoy controls */
+
+    #backButton {
+        position: fixed;
+        top: initial; /* By default, BS makes both top and bottom 0 */
+        bottom: 120px;
+        left: 20px;
+
+        width: 60px;
+        background-color: #bbb;
+        opacity: 1;
+        height: 35px;
+
+        z-index: 2; /* This makes it layer above the middle button */
+    }
+
+    #nextButton {
+        position: fixed;
+
+        top: initial; /* By default, BS makes both top and bottom 0 */
+        bottom: 120px;
+        left: 80px;
+
+        width: 60px;
+        background-color: #bbb;
+        opacity: 1;
+        height: 35px;
+
+        z-index: 2; /* This makes it layer above the middle button */
+    }
+
+    #middleButton {
+        position: fixed;
+        bottom: 80px;
+        left: 60px;
+        background-color: #bbb;
+        height: 110px;
+        width: 40px;
+
+    }
+
+    #aButton {
+        position: fixed;
+
+        height: 60px;
+        width: 60px;
+        background-color: #bbb;
+        border-radius: 50%;
+        
+        right: 20px;
+        bottom: 140px;
+
+        color: #282c2f;
+        
+        text-align: center;
+    }
+
+    #bButton {
+        position: fixed;
+
+        height: 60px;
+        width: 60px;
+        background-color: #bbb;
+        border-radius: 50%;
+        
+        right: 80px;
+        bottom: 80px;
+        
+        color: #282c2f;
+
+        text-align: center;
+    }
+
+
+/* This query changes things for non-mobile devices*/
+
+@media only screen and (min-width: 660px) {
+
+    /* NameBoy Queries */
+
+        #NameBoyScreen {
+            width: 50vw;
+            height: 90vh;
+        }
+        
+        #backButton, #nextButton {
+            bottom: 400px;
+        }
+
+        #backButton {
+            left: 30px;
+        }
+
+        #nextButton {
+            left: 80px;
+        }
+
+        #middleButton {
+            bottom: 360px;
+            left: 65px
+        }
+
+        #aButton {
+            bottom: 420px;
+        }
+
+        #bButton {
+            bottom: 350px;
+        }
+
+    /* Font Size Queries */
+
+        p {
+            font-size: 12px;
+        }
+}
