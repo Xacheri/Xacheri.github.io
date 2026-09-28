@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantry Share</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-CVqbDaUW.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D5CD8GgX.css">
-  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
-  <body>
-    <div id="app"></div>
-  </body>
+    <title>Eliza And Malone Forever</title>
+    <link rel="icon" href="/images/monogram.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- CSS Library Import -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="Navigation sticky-top"></div>
+    <div class="Carousel"></div>
+    <em class="text-center w-100 d-flex justify-content-center"><p id="countdown-timer" class="text-center fs-2 fw-light m-2 w-100"></p></em>
+
+    <div class="Destination"></div>
+    <div class="Venue"></div>
+    <div class="Family"></div>
+    <div class="Rsvp"></div>
+     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9b6993fab8.js" crossorigin="anonymous"></script>
+    <script src="/scripts/LoadComponent.js"></script>
+    <script src="/scripts/CountdownTimer.js"></script>
+    <script src="/scripts/RsvpForm.js"></script>
+    <script>
+        // Load Components
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/navbar.html", "Navigation")
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/engagement-carousel.html", "Carousel")
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/destination.html", "Destination")
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/venue.html", "Venue")
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/family.html", "Family")
+        })
+        document.addEventListener("DOMContentLoaded", () => {
+            LoadComponent("./components/rsvp.html", "Rsvp")
+        })
+    </script>
+</body>
 </html>
