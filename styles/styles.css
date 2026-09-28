@@ -436,6 +436,10 @@ h3,
     gap: 0.7rem;
 }
 
+.rsvp-form[hidden] {
+    display: none;
+}
+
 .rsvp-label,
 .rsvp-plus-one legend {
     color: var(--forest);

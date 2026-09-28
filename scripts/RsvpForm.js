@@ -1,7 +1,33 @@
 document.addEventListener("submit", (event) => {
   const form = event.target;
 
-  if (!(form instanceof HTMLFormElement) || form.id !== "rsvp-form") {
+  if (!(form instanceof HTMLFormElement)) {
+    return;
+  }
+
+  if (form.id === "secret-code-form") {
+    event.preventDefault();
+
+    const secretCode = new FormData(form).get("secretCode");
+    const errorMessage = document.getElementById("secret-code-error");
+
+    if (secretCode !== "love mas") {
+      errorMessage.hidden = false;
+      return;
+    }
+
+    form.hidden = true;
+    document.getElementById("rsvp-form").hidden = false;
+    document.getElementById("RsvpHeader").textContent = "RSVP";
+    const rsvpLink = document.querySelector('a[href="#RsvpHeader"]');
+
+    if (rsvpLink) {
+      rsvpLink.textContent = "RSVP";
+    }
+    return;
+  }
+
+  if (form.id !== "rsvp-form") {
     return;
   }
 

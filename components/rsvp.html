@@ -1,8 +1,14 @@
 <section class="rsvp-section" aria-labelledby="RsvpHeader">
   <div class="rsvp-panel">
     <p class="section-eyebrow">We hope you can join us</p>
-    <h2 class="section-heading" id="RsvpHeader">RSVP</h2>
-    <form id="rsvp-form" class="rsvp-form">
+    <h2 class="section-heading" id="RsvpHeader">Secret Code</h2>
+    <form id="secret-code-form" class="rsvp-form">
+      <label class="rsvp-label" for="secret-code">Enter the secret code</label>
+      <input class="rsvp-name-input" id="secret-code" name="secretCode" type="password" autocomplete="off" required>
+      <p id="secret-code-error" role="alert" hidden>That code isn't quite right. Please try again.</p>
+      <button class="rsvp-submit" type="submit">Continue <span aria-hidden="true">&#8594;</span></button>
+    </form>
+    <form id="rsvp-form" class="rsvp-form" hidden>
       <label class="rsvp-label" for="rsvp-name">Your name</label>
       <input class="rsvp-name-input" id="rsvp-name" name="name" type="text" autocomplete="name" required>
 
