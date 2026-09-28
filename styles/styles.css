@@ -1,0 +1,655 @@
+:root {
+    --forest: #0B3824;
+    --leaf: #7EC243;
+    --sage: #DCEAB7;
+    --berry: #AF4B9C;
+    --plum: #893A7A;
+    --page-gutter: clamp(1.25rem, 5vw, 5rem);
+}
+
+body {
+    min-width: 320px;
+    color: var(--forest);
+    background: linear-gradient(180deg, rgba(126, 194, 67, 0.16), transparent 24rem), var(--sage);
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+p {
+    max-width: 68ch;
+    margin: 0 auto 1.25rem;
+    color: var(--forest);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+li {
+    line-height: 1.7;
+}
+
+strong,
+b {
+    color: var(--plum);
+    font-weight: 700;
+}
+
+em,
+i {
+    color: var(--plum);
+}
+
+a:not(.nav-link) {
+    color: var(--plum);
+    text-decoration-color: rgba(137, 58, 122, 0.55);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+a:not(.nav-link):hover {
+    color: var(--forest);
+    text-decoration-color: var(--leaf);
+}
+
+a:not(.nav-link):focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--berry);
+    outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+.navbar-gradient .fs-2 {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+}
+
+.text-common {
+    color: var(--forest) !important;
+}
+
+.bg-common {
+    background-color: var(--sage);
+}
+
+.navbar-gradient {
+    background: linear-gradient(
+        112deg,
+        rgba(126, 194, 67, 0.24) 0%,
+        rgba(220, 234, 183, 0.82) 44%,
+        rgba(175, 75, 156, 0.13) 100%
+    );
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(11, 56, 36, 0.18);
+}
+
+.navbar-gradient > .text-center {
+    padding: 0.75rem var(--page-gutter) 0.5rem;
+}
+
+.navbar-gradient img {
+    display: inline-block;
+    width: 90px;
+    height: auto;
+    filter: drop-shadow(0 3px 5px rgba(11, 56, 36, 0.12));
+}
+
+.navbar-gradient .fs-2 {
+    margin-top: 0.1rem;
+    font-size: 2.25rem !important;
+    line-height: 1.1;
+}
+
+.navbar-gradient .fs-5 {
+    font-size: 0.95rem !important;
+}
+
+.navbar-gradient .navbar {
+    padding-top: 0.25rem;
+    padding-bottom: 0.4rem;
+}
+
+.navbar-gradient .nav-link {
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 0.55rem 0.75rem;
+    color: var(--forest) !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.navbar-gradient .nav-link::after {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.25rem;
+    left: 0.75rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--leaf), var(--berry));
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+}
+
+.navbar-gradient .nav-link:hover,
+.navbar-gradient .nav-link:focus-visible {
+    color: var(--plum) !important;
+}
+
+.navbar-gradient .nav-link:hover::after,
+.navbar-gradient .nav-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.navbar-toggler {
+    color: var(--plum);
+}
+
+.navbar-toggler:focus-visible,
+.navbar-gradient a:focus-visible {
+    outline: 2px solid var(--berry);
+    outline-offset: 3px;
+}
+
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    max-height: 72vh;
+    object-fit: cover;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 1.7rem;
+    height: 3px;
+    background-color: var(--sage);
+    opacity: 0.75;
+}
+
+.carousel-indicators .active {
+    background-color: var(--leaf);
+    opacity: 1;
+}
+
+#countdown-timer {
+    margin: 0;
+    padding: 1.1rem var(--page-gutter);
+    color: var(--sage);
+    background: linear-gradient(105deg, var(--plum), var(--berry));
+    font-size: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.photo-section {
+    position: relative;
+    display: grid;
+    min-height: 620px;
+    padding: clamp(3rem, 8vw, 7rem) var(--page-gutter);
+    overflow: hidden;
+    place-items: center;
+    isolation: isolate;
+    background-color: var(--forest);
+    background-size: cover;
+}
+
+.destination-section {
+    justify-items: end;
+    background-image: url("../images/vegas-pictures/aerial-view-at-night.jpg");
+    background-position: center 55%;
+}
+
+.venue-section {
+    min-height: 460px;
+    justify-items: start;
+    background-image: url("../images/vegas-pictures/tbell-catering.jpg");
+    background-position: 70% center;
+}
+
+.photo-section::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(11, 56, 36, 0.5), rgba(11, 56, 36, 0.12) 58%, rgba(11, 56, 36, 0.35));
+    content: "";
+}
+
+.glass-panel {
+    width: min(100%, 760px);
+    padding: clamp(1.5rem, 4vw, 3.25rem);
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(220, 234, 183, 0.91), rgba(220, 234, 183, 0.78));
+    box-shadow: 0 24px 70px rgba(5, 27, 17, 0.28);
+    -webkit-backdrop-filter: blur(18px) saturate(115%);
+    backdrop-filter: blur(18px) saturate(115%);
+}
+
+.venue-glass-panel {
+    max-width: 680px;
+}
+
+.section-eyebrow {
+    margin: 0 0 0.65rem;
+    color: var(--plum);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    margin: 0 0 1.5rem;
+    color: var(--forest);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.02;
+    scroll-margin-top: 2rem;
+}
+
+#VenueHeader {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+}
+
+.destination-copy p {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+}
+
+.destination-copy p:last-child {
+    margin-bottom: 0;
+    color: var(--plum);
+    font-weight: 600;
+}
+
+.venue-glass-panel > p:not(.section-eyebrow) {
+    margin: 0 0 1rem;
+}
+
+.venue-glass-panel .venue-note {
+    margin-bottom: 0;
+    color: var(--plum);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.family-section {
+    padding: clamp(3.5rem, 8vw, 6rem) var(--page-gutter);
+    background: linear-gradient(145deg, rgba(126, 194, 67, 0.13), rgba(175, 75, 156, 0.07));
+}
+
+.family-inner {
+    width: min(100%, 1080px);
+    margin-inline: auto;
+}
+
+.family-section > .family-inner > .section-eyebrow,
+.family-heading {
+    text-align: center;
+}
+
+.family-heading {
+    margin-bottom: 2.5rem;
+    font-size: clamp(2.7rem, 6vw, 4.2rem);
+}
+
+.family-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.family-grid-brides {
+    width: min(100%, 740px);
+    margin-inline: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.family-grid-cats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.family-card {
+    display: flex;
+    min-width: 0;
+    min-height: 230px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba(11, 56, 36, 0.14);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.28);
+    text-align: center;
+}
+
+.family-card h3 {
+    margin: 0.85rem 0 0.1rem;
+    color: var(--forest);
+    font-size: 1.7rem;
+    line-height: 1.1;
+}
+
+.family-card .family-pronouns {
+    margin: 0;
+    color: var(--plum);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.family-card .family-bio {
+    max-width: 68ch;
+    margin: 0.75rem 0 0;
+    color: var(--forest);
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: left;
+}
+
+.family-avatar {
+    display: grid;
+    width: 144px;
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 5px 16px rgba(11, 56, 36, 0.18);
+}
+
+.family-avatar span {
+    color: var(--forest);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.family-avatar-eliza {
+    background: radial-gradient(circle at 35% 28%, #fff 0 5%, transparent 6%), linear-gradient(145deg, #e9b4d8, var(--berry) 72%);
+}
+
+.family-avatar-malone {
+    background: radial-gradient(circle at 35% 28%, #fff 0 5%, transparent 6%), linear-gradient(145deg, #d9edb7, var(--leaf) 72%);
+}
+
+.family-avatar-cat {
+    width: 112px;
+}
+
+.family-avatar-cat span {
+    font-size: 2.8rem;
+}
+
+.family-avatar-doorknob {
+    background: linear-gradient(145deg, #e8d6aa, #a8824c);
+}
+
+.family-avatar-bagheera {
+    background: linear-gradient(145deg, #aab7aa, #52645c);
+}
+
+.family-avatar-molly {
+    background: linear-gradient(145deg, #f0d0b8, #c77c72);
+}
+
+.family-subheading {
+    margin: 3rem 0 1.25rem;
+    color: var(--plum);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.rsvp-section {
+    display: grid;
+    min-height: 440px;
+    padding: clamp(3.5rem, 8vw, 6rem) var(--page-gutter);
+    place-items: center;
+    background: linear-gradient(112deg, var(--forest), #17462f 58%, var(--plum));
+}
+
+.rsvp-panel {
+    width: min(100%, 680px);
+    padding: clamp(1.5rem, 5vw, 3.25rem);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 8px;
+    background: rgba(220, 234, 183, 0.94);
+    box-shadow: 0 24px 70px rgba(5, 27, 17, 0.3);
+}
+
+.rsvp-panel > .section-eyebrow,
+.rsvp-panel > .section-heading {
+    text-align: center;
+}
+
+.rsvp-panel > .section-heading {
+    margin-bottom: 1.75rem;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+}
+
+.rsvp-form {
+    display: grid;
+    gap: 0.7rem;
+}
+
+.rsvp-label,
+.rsvp-plus-one legend {
+    color: var(--forest);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.rsvp-name-input {
+    width: 100%;
+    min-height: 3.2rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba(11, 56, 36, 0.35);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--forest);
+    font: inherit;
+}
+
+.rsvp-name-input:focus-visible,
+.rsvp-choice input:focus-visible {
+    outline: 2px solid var(--berry);
+    outline-offset: 3px;
+}
+
+.rsvp-plus-one {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1.25rem;
+    margin: 0.65rem 0 0.9rem;
+    padding: 0;
+    border: 0;
+}
+
+.rsvp-plus-one legend {
+    width: 100%;
+    margin-bottom: 0.2rem;
+}
+
+.rsvp-choice {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--forest);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.rsvp-choice input {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0;
+    accent-color: var(--plum);
+}
+
+.rsvp-submit {
+    display: flex;
+    width: 100%;
+    min-height: 4.25rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.25rem;
+    border: 0;
+    border-radius: 4px;
+    background: linear-gradient(105deg, var(--plum), var(--berry));
+    box-shadow: 0 8px 22px rgba(137, 58, 122, 0.23);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.rsvp-submit span {
+    color: inherit;
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.rsvp-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(137, 58, 122, 0.32);
+    background: linear-gradient(105deg, var(--berry), var(--plum));
+}
+
+.rsvp-submit:focus-visible {
+    outline: 3px solid var(--leaf);
+    outline-offset: 4px;
+}
+
+.fa-chevron-up {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="false"] .fa-chevron-down {
+    display: block;
+}
+
+.navbar-toggler[aria-expanded="false"] .fa-chevron-up {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .fa-chevron-down {
+    display: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .fa-chevron-up {
+    display: block;
+}
+
+@media (max-width: 575.98px) {
+    .navbar-gradient > .text-center {
+        padding-top: 0.5rem;
+    }
+
+    .navbar-gradient img {
+        width: 72px;
+    }
+
+    .navbar-gradient .fs-2 {
+        font-size: 2rem !important;
+    }
+
+    .navbar-gradient .fs-5 {
+        font-size: 0.82rem !important;
+    }
+
+    .carousel-item img {
+        aspect-ratio: 4 / 3;
+        max-height: 62vh;
+    }
+
+    #countdown-timer {
+        padding-block: 0.9rem;
+        font-size: 0.9rem !important;
+    }
+
+    .photo-section {
+        min-height: 560px;
+        padding: 3rem 1rem;
+    }
+
+    .destination-section {
+        background-position: 57% center;
+    }
+
+    .venue-section {
+        min-height: 400px;
+        background-position: 70% center;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
+        background: rgba(220, 234, 183, 0.9);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+    }
+
+    .section-heading {
+        font-size: 2.3rem;
+    }
+
+    .destination-copy p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .family-grid-cats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .family-grid-brides,
+    .family-grid-cats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .family-card {
+        min-height: 205px;
+    }
+
+    .family-avatar {
+        width: 128px;
+    }
+
+    .family-avatar-cat {
+        width: 104px;
+    }
+
+    .rsvp-section {
+        min-height: 0;
+        padding: 3rem 1rem;
+    }
+
+    .rsvp-panel {
+        padding: 1.5rem;
+    }
+
+    .rsvp-submit {
+        min-height: 3.75rem;
+        font-size: 1.05rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

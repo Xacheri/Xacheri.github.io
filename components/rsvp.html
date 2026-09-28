@@ -1,0 +1,24 @@
+<section class="rsvp-section" aria-labelledby="RsvpHeader">
+  <div class="rsvp-panel">
+    <p class="section-eyebrow">We hope you can join us</p>
+    <h2 class="section-heading" id="RsvpHeader">RSVP</h2>
+    <form id="rsvp-form" class="rsvp-form">
+      <label class="rsvp-label" for="rsvp-name">Your name</label>
+      <input class="rsvp-name-input" id="rsvp-name" name="name" type="text" autocomplete="name" required>
+
+      <fieldset class="rsvp-plus-one">
+        <legend>Are you bringing a plus one?</legend>
+        <label class="rsvp-choice">
+          <input type="radio" name="plusOne" value="yes" required>
+          <span>Yes</span>
+        </label>
+        <label class="rsvp-choice">
+          <input type="radio" name="plusOne" value="no" required>
+          <span>No</span>
+        </label>
+      </fieldset>
+
+      <button class="rsvp-submit" type="submit">Send your RSVP <span aria-hidden="true">&#8594;</span></button>
+    </form>
+  </div>
+</section>
